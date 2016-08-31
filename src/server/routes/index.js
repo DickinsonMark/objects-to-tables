@@ -20,7 +20,9 @@ router.get('/', function (req, res, next) {
 });
 
 router.get('/contacts', (req, res, next) => {
-  res.render('contacts', { contacts });
+  queries.contacts.get().then((contacts) => {
+    res.render('contacts', { contacts });
+  });
 });
 
 module.exports = router;
