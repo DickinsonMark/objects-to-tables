@@ -3,6 +3,9 @@ const router = express.Router();
 
 const indexController = require('../controllers/index');
 const contacts = require('./data').all;
+const queries = {
+  contacts: require('../db/contacts')
+};
 
 router.get('/', function (req, res, next) {
   const renderObject = {};
