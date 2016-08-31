@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 const indexController = require('../controllers/index');
+const contacts = require('./data').all;
 
 router.get('/', function (req, res, next) {
   const renderObject = {};
@@ -16,7 +17,7 @@ router.get('/', function (req, res, next) {
 });
 
 router.get('/contacts', (req, res, next) => {
-  res.render('contacts');
+  res.render('contacts', { contacts });
 });
 
 module.exports = router;
