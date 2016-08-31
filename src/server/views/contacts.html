@@ -7,8 +7,29 @@
 
   <div class="row">
     <div class="col-md-12">
-      <h1>Contacts Page! 🐒</h1>
-      {{ contacts | dump }}
+      <h1>Contacts Page</h1>
+      <table class="table">
+        <thead>
+          <tr>
+            {% for key,_ in contacts[0] %}
+              <th>
+                {{ key }}
+              </th>
+            {% endfor %}
+          </tr>
+        </thead>
+        <tbody>
+          {% for contact in contacts %}
+            <tr>
+              {% for _, val in contact %}
+                <td>
+                  {{ val }}
+                </td>
+              {% endfor %}
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
     </div>
   </div>
 
