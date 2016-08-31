@@ -59,10 +59,7 @@ gulp.task('jshint', () => {
       esnext: true
     }))
     .pipe(jshint.reporter('jshint-stylish'))
-    .pipe(jshint.reporter('fail'))
-    .pipe(notify({
-      message: 'jshint done'
-    }));
+    .pipe(jshint.reporter('fail'));
 });
 
 gulp.task('jscs', () => {
@@ -70,10 +67,7 @@ gulp.task('jscs', () => {
     .pipe(plumber())
     .pipe(jscs())
     .pipe(jscs.reporter())
-    .pipe(jscs.reporter('fail'))
-    .pipe(notify({
-      message: 'jscs done'
-    }));
+    .pipe(jscs.reporter('fail'));
 });
 
 gulp.task('styles', () => {
